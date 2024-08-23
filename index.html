@@ -24,53 +24,47 @@
 <body>
     <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
         <div class="text-center">
-            <h1>TRAD-BS</h1>
-            <h3>TRAD-BS</h3>
+            <h1>TRAD-BS:</h1>
+            <h3>Enabling Beam Search for Language Model-Based Text-to-Speech Synthesis</h3>
             <p>
             </p>
             <p><b>Anonymous Authors</b></p>
         </div>
         <p>
             <b>Abstract.</b>
-            <!-- Various applications of voice synthesis have been developed independently despite the fact that they
-            generate "voice" as output in common. In addition, the majority of voice synthesis models currently rely on
-            annotated audio data, but it is crucial to scale them to self-supervised datasets in order to effectively
-            capture the wide range of acoustic variations present in human voice, including speaker identity, emotion,
-            and prosody. In this work, we propose Make-A-Voice, a unified framework for synthesizing and manipulating
-            voice signals from discrete representations. Make-A-Voice leverages a "coarse-to-fine" approach to model the
-            human voice, which involves three stages: 1) semantic stage: model high-level transformation between
-            linguistic content and self-supervised semantic tokens, 2) acoustic stage: introduce varying control signals
-            as acoustic conditions for semantic-to-acoustic modeling, and 3) generation stage: synthesize high-fidelity
-            waveforms from acoustic tokens. Make-A-Voice offers notable benefits as a unified voice synthesis framework:
-            1) Data scalability: the major backbone (i.e., acoustic and generation stage) does not require any
-            annotations, and thus the training data could be scaled up. 2) Controllability and conditioning flexibility:
-            we investigate different conditioning mechanisms and effectively handle three voice synthesis applications,
-            including text-to-speech (TTS), voice conversion (VC), and singing voice synthesis (SVS) by re-synthesizing
-            the discrete voice representations with prompt guidance. Experimental results demonstrate that Make-A-Voice
-            exhibits superior audio quality and style similarity compared with competitive baseline models. -->
-            tmptmptmp
+            Tokenising continuous speech into sequences of discrete tokens and modelling them with language models (LMs)
+            have achieved a success for text-to-speech (TTS) synthesis. Although these models can generate speech with
+            high
+            quality and naturalness, their synthesised samples can still suffer from artifacts, mispronunciation, word
+            repeating,
+            etc. In this paper, we argue these undesirable properties could partly be caused by the randomness of
+            sampling-based
+            strategies during the autoregressive decoding of LMs. Therefore, we look at maximisation-based decoding
+            approaches
+            and propose Temporal Repetition Aware Diverse Beam Search (TRAD-BS) to find the most probable sequences of
+            the generated
+            speech tokens. Experiments with two most recent LM-based TTS models show that the proposed
+            maximisation-based decoding
+            strategy can generate speech with fewer mispronunciation and better speaker consistency.
         </p>
     </div>
 
     <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
-        <h2 id="model-overview" style="text-align: center;">Make-A-Voice Overview</h2>
+        <h2 id="Overview" style="text-align: center;">Make-A-Voice Overview</h2>
         <div>
             <p><br /></p>
             <p style="text-align: center;">
-                <img src="arch.png" height="200" width="1050" class="img-fluid">
+                <img src="bs4tts.png" height="200" width="1050" class="img-fluid">
             </p>
             <p><br /></p>
         </div>
         <p>
-            <!-- Make-A-Voice is considered a unified voice synthesis framework with a "coarse-to-fine" design that
-            progressively enhances the modeling of voice signals by injecting desired conditioning information, which is
-            organized in three main stages as illustrated in Figure 1: 1) semantic stage <i>S<sub>1</sub></i>, speech or
-            text inputs are transformed into a sequence of semantic tokens <i>s</i>, 2) acoustic stage
-            <i>S<sub>2</sub></i>, acoustic tokens <i>a</i> with a variety of conditions (speaker, emotion, prosody, and
-            style) are generated autoregressively from the "pseudo" text (i.e., semantic tokens <i>s</i>); 3) generation
-            stage <i>S<sub>3</sub></i>, a unit-based vocoder synthesizes high-fidelity waveforms from compressed
-            acoustic representations. -->
-            tmptmptmp
+            (a) A general inference paradigm of LM-based TTS. Speech tokens are generated autoregressively before
+            converted
+            into speech. (b) TRAD-BS operates through both decoding steps and beams, adding temporal and beam-wise
+            penalties
+            to repeated tokens. This can also be applied to the case where multiple tokens need to be decoded at a
+            single step.
         </p>
     </div>
 
@@ -79,7 +73,7 @@
         <h3>Comparison with VALL-E<a id="valle" /></h3>
 
         <p style="margin-top: 2em">
-            In this section, we compare our results with demo samples of VALL-E.
+            In this section, show the zero-shot TTS samples from the VoiceCraft.
         </p>
         <div class="container pt-3 table-responsive">
             <table class="table table-hover" id="valle-table">
@@ -87,8 +81,8 @@
                     <tr>
                         <th style="text-align: center">Text</th>
                         <th style="text-align: center">Prompt</th>
-                        <th style="text-align: center">VALL-E</th>
-                        <th style="text-align: center">Make-A-Voice (ours)</th>
+                        <th style="text-align: center">VoiceCraft</th>
+                        <th style="text-align: center">VoiceCraft + TRAD-BS</th>
                     </tr>
                 </thead>
                 <tbody>
