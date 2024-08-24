@@ -24,8 +24,7 @@
 <body>
     <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
         <div class="text-center">
-            <h2>TRAD-BS:</h2>
-            <h3>Enabling Beam Search for Language Model-Based Text-to-Speech Synthesis</h3>
+            <h2>Enabling Beam Search for Language Model-Based Text-to-Speech Synthesis</h2>
             <p>
             </p>
             <p><b>Anonymous Authors</b></p>
@@ -50,7 +49,7 @@
     </div>
 
     <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
-        <h2 id="Overview" style="text-align: center;">Make-A-Voice Overview</h2>
+        <h2 id="Overview" style="text-align: center;">Overview</h2>
         <div>
             <p><br /></p>
             <p style="text-align: center;">
@@ -73,7 +72,8 @@
         <h3>Experiments with VoiceCraft<a id="voicecraft" /></h3>
 
         <p style="margin-top: 2em">
-            In this section, show the zero-shot TTS samples from the VoiceCraft.
+            In this section, show the zero-shot TTS samples from the VoiceCraft. The speech prompt is the first 3 second
+            segment, same as the setup in the VoiceCraft paper.
         </p>
         <div class="container pt-3 table-responsive">
             <table class="table table-hover" id="voicecraft-table">
@@ -82,30 +82,231 @@
                         <th style="text-align: center">Text</th>
                         <th style="text-align: center">Prompt</th>
                         <th style="text-align: center">VoiceCraft</th>
-                        <th style="text-align: center">VoiceCraft + TRAD-BS</th>
+                        <th style="text-align: center">+TRAD-BS</th>
                     </tr>
                 </thead>
                 <tbody>
 
                     <tr height=100px>
-                        <iframe src="data/texts/POD1000000013_S0000073_to_POD1000000013_S0000089_baseline.txt"></iframe>
-                        <audio controls>
-                            <source src="data/prompts/POD1000000013_S0000073.wav" type="audio/wav">
-                            Your browser does not support the audio element.
-                        </audio>
-                        <audio controls>
-                            <source src="data/voicecraft/POD1000000013_S0000073_to_POD1000000013_S0000089_baseline.wav"
-                                type="audio/wav">
-                            Your browser does not support the audio element.
-                        </audio> <audio controls>
-                            <source src="data/tradbs/POD1000000013_S0000073_to_POD1000000013_S0000089_beamsearch.wav"
-                                type="audio/wav">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <td>so, i, my main dealings are with the scottish parliamentary corporate body.</td>
+                        <td><audio controls>
+                                <source src="data/prompts/POD1000000015_S0000118.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio></td>
+                        <td><audio controls>
+                                <source
+                                    src="data/voicecraft/POD1000000015_S0000118_to_POD1000000015_S0000181_baseline.wav"
+                                    type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio></td>
+                        <td><audio controls>
+                                <source
+                                    src="data/tradbs/POD1000000015_S0000118_to_POD1000000015_S0000181_beamsearch.wav"
+                                    type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio></td>
+                    </tr>
+
+                    <tr height=100px>
+                        <td>for what? oh cuz we've got nurses who were in full hospital gowns in a whole god damn tents
+                            set up
+                            like it's side of the road for a covid test.</td>
+                        <td><audio controls>
+                                <source src="data/prompts/POD1000000046_S0000146.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio></td>
+                        <td><audio controls>
+                                <source
+                                    src="data/voicecraft/POD1000000046_S0000146_to_POD1000000046_S0000536_baseline.wav"
+                                    type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio></td>
+                        <td><audio controls>
+                                <source
+                                    src="data/tradbs/POD1000000046_S0000146_to_POD1000000046_S0000536_beamsearch.wav"
+                                    type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio></td>
+                    </tr>
+
+                    <tr height=100px>
+                        <td>well, first of all, i've got huge support from my deputy and the senior management team, who
+                            reassured me that, of course this isn't true, and you know it isn't true, and we know it
+                            isn't true.</td>
+                        <td><audio controls>
+                                <source src="data/prompts/POD1000000013_S0000073.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio></td>
+                        <td><audio controls>
+                                <source
+                                    src="data/voicecraft/POD1000000013_S0000073_to_POD1000000013_S0000089_baseline.wav"
+                                    type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio></td>
+                        <td><audio controls>
+                                <source
+                                    src="data/tradbs/POD1000000013_S0000073_to_POD1000000013_S0000089_beamsearch.wav"
+                                    type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio></td>
+                    </tr>
+
+                    <tr height=100px>
+                        <td>and i think for me also like this has been the central the lesson that i am learning as, as,
+                            i grow up every day.</td>
+                        <td><audio controls>
+                                <source src="data/prompts/POD1000000024_S0000094.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio></td>
+                        <td><audio controls>
+                                <source
+                                    src="data/voicecraft/POD1000000024_S0000094_to_POD1000000024_S0000104_baseline.wav"
+                                    type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio></td>
+                        <td><audio controls>
+                                <source
+                                    src="data/tradbs/POD1000000024_S0000094_to_POD1000000024_S0000104_beamsearch.wav"
+                                    type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio></td>
+                    </tr>
+
+                    <tr height=100px>
+                        <td>i'm not sure we were like looking for personal relationship when we started, like a
+                            friendship.</td>
+                        <td><audio controls>
+                                <source src="data/prompts/POD1000000026_S0000205.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio></td>
+                        <td><audio controls>
+                                <source
+                                    src="data/voicecraft/POD1000000026_S0000205_to_POD1000000026_S0000261_baseline.wav"
+                                    type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio></td>
+                        <td><audio controls>
+                                <source
+                                    src="data/tradbs/POD1000000026_S0000205_to_POD1000000026_S0000261_beamsearch.wav"
+                                    type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio></td>
+                    </tr>
+
+                    <tr height=100px>
+                        <td>and one of the ways to do that is to pay for it. and when people are asked to pay for
+                            something, they will be a lot more careful about the way they behave.</td>
+                        <td><audio controls>
+                                <source src="data/prompts/POD1000000031_S0000022.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio></td>
+                        <td><audio controls>
+                                <source
+                                    src="data/voicecraft/POD1000000031_S0000022_to_POD1000000031_S0000024_baseline.wav"
+                                    type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio></td>
+                        <td><audio controls>
+                                <source
+                                    src="data/tradbs/POD1000000031_S0000022_to_POD1000000031_S0000024_beamsearch.wav"
+                                    type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio></td>
+                    </tr>
+
+                    <tr height=100px>
+                        <td>and they don't scale as simply as more modern systems do. so you know the fact that you're
+                            hiring programmers out of retirement, and people don't live forever.</td>
+                        <td><audio controls>
+                                <source src="data/prompts/POD1000000035_S0000032.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio></td>
+                        <td><audio controls>
+                                <source
+                                    src="data/voicecraft/POD1000000035_S0000032_to_POD1000000035_S0000033_baseline.wav"
+                                    type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio></td>
+                        <td><audio controls>
+                                <source
+                                    src="data/tradbs/POD1000000035_S0000032_to_POD1000000035_S0000033_beamsearch.wav"
+                                    type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio></td>
+                    </tr>
+
+                    <tr height=100px>
+                        <td>whatever bring a little joy that we need so much right now to our lives katie i can't wait
+                            to hear what you brought us the week.</td>
+                        <td><audio controls>
+                                <source src="data/prompts/POD1000000045_S0000022.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio></td>
+                        <td><audio controls>
+                                <source
+                                    src="data/voicecraft/POD1000000045_S0000022_to_POD1000000045_S0000032_baseline.wav"
+                                    type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio></td>
+                        <td><audio controls>
+                                <source
+                                    src="data/tradbs/POD1000000045_S0000022_to_POD1000000045_S0000032_beamsearch.wav"
+                                    type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio></td>
+                    </tr>
+
+                    <tr height=100px>
+                        <td>and also, how can those skills trans like to other life experiences.</td>
+                        <td><audio controls>
+                                <source src="data/prompts/POD1000000037_S0000020.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio></td>
+                        <td><audio controls>
+                                <source
+                                    src="data/voicecraft/POD1000000037_S0000020_to_POD1000000037_S0000022_baseline.wav"
+                                    type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio></td>
+                        <td><audio controls>
+                                <source
+                                    src="data/tradbs/POD1000000037_S0000020_to_POD1000000037_S0000022_beamsearch.wav"
+                                    type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio></td>
+                    </tr>
+
+                    <tr height=100px>
+                        <td>we know trump wants credit for the vaccine being developed quickly but this isn't fast food.
+                            like no one is really pumped about like a a rushed medical product right? like no one's
+                            getting the the fastest created tylenol ever right?</td>
+                        <td><audio controls>
+                                <source src="data/prompts/POD1000000043_S0000077.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio></td>
+                        <td><audio controls>
+                                <source
+                                    src="data/voicecraft/POD1000000043_S0000077_to_POD1000000043_S0000110_baseline.wav"
+                                    type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio></td>
+                        <td><audio controls>
+                                <source
+                                    src="data/tradbs/POD1000000043_S0000077_to_POD1000000043_S0000110_beamsearch.wav"
+                                    type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio></td>
                     </tr>
 
                 </tbody>
             </table>
+            <script>
+                function fetchTextFile(url) {
+                    return fetch(url)
+                        .then(response => response.text())
+                        .catch(error => console.error('Error fetching text file:', error));
+                }
+            </script>
         </div>
 
     </div>
